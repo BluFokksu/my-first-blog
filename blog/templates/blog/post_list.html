@@ -11,8 +11,15 @@
     <a href="https://www.newgrounds.com/portal/view/470460">DOOMZINHOEMFLASH</a>
     <ul><li>Primeiro Item: O SAITE funfo</li><li>Segundo item:Eu sou belo e lindo</li><li>Terceiro item: VOCÊ É LINDO(A) E BELAZUDA(BELOZUDO SEPA)</li></ul>
     <div>
-      <h1> /\ DIVIDIU MANO</h1>
+        <h1><a href="/">Django Girls Blog</a></h1>
     </div>
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 
-  </body>
+
 </html>
