@@ -1,25 +1,18 @@
-<html>
-  <head>
-      <title>Blogao do Blu</title>
-  </head>
-  <body>
-    <h1>LESAITE</h1>
-    <h2>A VINGANÇA</h2>
-    <h3>DO BURU</h3>
-    <p>EAE CARAIO</p>
-    <P>SAPORRA TA FUNFANDO NUM TA NAO??? TA SIM <em>PORRA</em></P>
-    <a href="https://www.newgrounds.com/portal/view/470460">DOOMZINHOEMFLASH</a>
-    <ul><li>Primeiro Item: O SAITE funfo</li><li>Segundo item:Eu sou belo e lindo</li><li>Terceiro item: VOCÊ É LINDO(A) E BELAZUDA(BELOZUDO SEPA)</li></ul>
-    <div>
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
+{% extends 'blog/base.html' %}
+
+{% block content %}
     {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
-
-
-</html>
+      <div class="post">
+        <style>
+body {
+        color: #0FFF13
+}
+        </style>
+          <div class="date">
+              {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1
+            <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+     {% endfor %}
+{% endblock %}
